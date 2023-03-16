@@ -11,7 +11,6 @@ function App() {
       <NoteState>
         <BrowserRouter>
           <Navbar />
-
           <div className="container">
             <Routes>
               <Route exact path="/home" element={<Home />} />

@@ -1,101 +1,97 @@
-import React from "react";
 import NoteContext from "./noteContext";
 import { useState } from "react";
 
 const NoteState = (props) => {
   const notesInitial = [
     {
-      _id: "63f9bbfef307b34266d0d54d",
-      user: "63f75a425cb6a523776c977d",
-      title: "my title",
-      description: "uthjaa",
-      tag: "per",
-      date: "2023-02-25T07:42:54.567Z",
+      _id: "61322f195153781a8ca8d0e06",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.509Z",
       __v: 0,
     },
     {
-      _id: "63f9bc04f307b34266d0d54f",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tire3rctle",
-      description: "uthc3cjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:00.688Z",
+      _id: "61322f195531781a8ca8d0e08",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
     {
-      _id: "63f9bc08f307b34266d0d551",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tirc3ce3rctle",
-      description: "uthc3ccccjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:04.347Z",
-      __v: 0,
-    },
-    ,
-    {
-      _id: "63f9bc04f307b34266d0d54f",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tire3rctle",
-      description: "uthc3cjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:00.688Z",
+      _id: "61322f19553781a8ca8d0e081",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
     {
-      _id: "63f9bc08f307b34266d0d551",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tirc3ce3rctle",
-      description: "uthc3ccccjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:04.347Z",
+      _id: "61322f19553781a8ca8d0e082",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
     {
-      _id: "63f9bc04f307b34266d0d54f",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tire3rctle",
-      description: "uthc3cjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:00.688Z",
+      _id: "61322f195537812a8ca8d0e08",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
     {
-      _id: "63f9bc08f307b34266d0d551",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tirc3ce3rctle",
-      description: "uthc3ccccjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:04.347Z",
+      _id: "613222f19553781a8ca8d0e08",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
-    ,
     {
-      _id: "63f9bc04f307b34266d0d54f",
-      user: "63f75a425cb6a523776c977d",
-      title: "my tire3rctle",
-      description: "uthc3cjaa",
-      tag: "per",
-      date: "2023-02-25T07:43:00.688Z",
+      _id: "61322f119553781a8ca8d0e08",
+      user: "6131dc5e3e4037cd4734a066",
+      title: "My Title",
+      description: "Please wake up early",
+      tag: "personal",
+      date: "2021-09-03T14:20:09.668Z",
       __v: 0,
     },
   ];
   const [notes, setNotes] = useState(notesInitial);
-  // const s1 = {
-  //     "name": "Harry",
-  //     "class": "5b"
-  // }
-  // const [state, setState] = useState(s1);
 
-  // const update = ()=>{
-  //     setTimeout(() => {
-  //         setState({
-  //             "name": "Larry",
-  //             "class": "10b"
-  //         })
-  //     }, 1000);
-  // }
+  // Add a Note
+  const addNote = (title, description, tag) => {
+    // TODO: API Call
+    console.log("Adding a new note");
+    const note = {
+      _id: "61322f119553781a8ca8d0e08",
+      user: "6131dc5e3e4037cd4734a0664",
+      title: title,
+      description: description,
+      tag: tag,
+      date: "2021-09-03T14:20:09.668Z",
+      __v: 0,
+    };
+    setNotes(notes.concat(note));
+  };
+
+  // Delete a Note
+  const deleteNote = () => {};
+  // Edit a Note
+  const editNote = () => {};
+
   return (
-    <NoteContext.Provider value={{ notes, setNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote }}>
       {props.children}
     </NoteContext.Provider>
   );

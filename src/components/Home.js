@@ -5,7 +5,7 @@ function Home() {
   
   return (
     <div>
-     <AddNote/>
+     
       <Notes/>
     </div>
   );
